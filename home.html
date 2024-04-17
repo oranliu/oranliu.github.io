@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            overflow-x: auto;
+        }
+
+        .background {
+            background-image: url('background.jpg'); /* Replace 'background.jpg' with your image file */
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 100vh;
+            width: 300vw; /* Adjust the width based on the size of your background image */
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .interactive-area {
+            position: absolute;
+            cursor: pointer;
+            background-color: rgba(255, 255, 255, 0.5); /* Adjust the color and opacity of the interactive areas */
+            border-radius: 50%;
+            width: 100px; /* Adjust the size of the interactive areas */
+            height: 100px; /* Adjust the size of the interactive areas */
+        }
+
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            z-index: 9999;
+        }
+    </style>
+</head>
+<body>
+    <div class="background">
+        <div class="interactive-area" style="left: 50vw; top: 50vh;"></div> <!-- Adjust the position of the interactive area -->
+    </div>
+
+    <div id="popup1" class="popup">
+        <h2>Popup Page 1</h2>
+        <p>Detail drawing 1</p>
+        <button onclick="closePopup('popup1')">Close</button>
+    </div>
+
+    <script>
+        function openPopup(id) {
+            var popup = document.getElementById(id);
+            popup.style.display = "block";
+        }
+
+        function closePopup(id) {
+            var popup = document.getElementById(id);
+            popup.style.display = "none";
+        }
+    </script>
+</body>
+</html>
